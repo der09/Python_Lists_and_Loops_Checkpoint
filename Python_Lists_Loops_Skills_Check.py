@@ -75,12 +75,26 @@ print(games)
 # Then pop the FIRST item into a variable named removed_game.
 # Print removed_game and the remaining games list.
 
+print()
+print("Task 5:")
+print()
+
+games.remove("Roblox")
+removed_game = games.pop(0)
+print(removed_game)
+print(games)
 
 # TASK 6:
 # Create colors = ["red", "blue", "green", "yellow", "purple"].
 # Store the index of "green" in green_index using index().
 # Print green_index. Then replace "yellow" with "orange".
 # Print the new list.
+
+print() 
+print("Task 6:")
+print()
+
+colors = ["red", "blue", "green", "yellow", "purple"]
 
 
 # ============================================================
@@ -91,16 +105,31 @@ print(games)
 # Use a for loop with range() to print numbers 1 through 20,
 # INCLUDING 20. Do not manually print the numbers.
 
+print()
+print("Task 7:")
+print()
+
+for i in range(1, 21): 
+    print(i)
 
 # TASK 8:
 # Use a for loop with range() to print 30, 27, 24, ... 0.
 # IMPORTANT: The zero must be included.
 
+print()
+print("Task 8:")
+print()
+
+for i in range(33, -1):
+    print(i - 3)
 
 # TASK 9:
 # Use a for loop to print all EVEN numbers from 1 to 50.
 # You MUST use an if statement and the % operator inside the loop.
 
+print()
+print("Task 9:")
+print()
 
 # TASK 10:
 # Create number = 7.
