@@ -285,17 +285,16 @@ print()
 print("Task 18:")
 print()
 
-
-
-choice = input("Choose 1, 2, or 3: ")
+choice = int(input("Choose 1, 2, or 3: "))
 if choice > 3 or choice < 1: 
     print("Invalid choice")
-    choice = input("Choose 1, 2, or 3:")
+    choice = int(input("Choose 1, 2, or 3:"))
 elif 1 <= choice <= 3: 
     while choice != 3: 
         print("1. Say Hello")
         print("2. Say Goodbye")
         print("3. Exit")
+        choice = int(input("Choose 1, 2, or 3:"))
         if choice == 2: 
             print("Goodbye")
             break
@@ -309,24 +308,69 @@ elif 1 <= choice <= 3:
 # Use a for loop to calculate and print their total.
 # Do NOT use sum().
 
+print()
+print("Task 19:")
+print()
+
+total = 0
+numbers = [4, 8, 15, 16, 23, 42]
+for i in numbers: 
+    total = total + i 
+    print(total)
 
 # TASK 20:
 # Create grades = [90, 85, 78, 92, 88].
 # Use a loop and len() to calculate the average.
 # Print the average. Do NOT use sum().
 
+print()
+print("Task 20:")
+print()
+
+total = 0 
+average = 0 
+grades = [90, 85, 78, 92, 88]
+for i in len(range(grades)): 
+    total = total + i 
+    average = total/(len(grades))
+    print(average)
 
 # TASK 21:
 # Create numbers = [3, 8, 12, 7, 15, 20, 24, 9].
 # Use ONE loop to count even and odd values separately.
 # Print "Even: [count]" and "Odd: [count]".
 
+print()
+print("Task 21:")
+print()
+
+count = 0 
+odd = 0
+numbers = [3, 8, 12, 7, 15, 20, 24, 9]
+for i in numbers: 
+    if i % 2 == 0: 
+        count = count + 1 
+    else: 
+        odd = odd + 1 
+    print("Even:", count)
+    print("Odd:", odd)
 
 # TASK 22:
 # Create numbers = [-14, -67, -23, -89, -45].
 # Use a loop to find and print the HIGHEST number.
 # Do NOT use max() or sorting.
 # IMPORTANT: Starting your answer at 0 gives a wrong result.
+
+print()
+print("Task 22:")
+print()
+
+highest = numbers[0]
+numbers = [-14, -67, -23, -89, -45]
+for i in numbers:
+    if i > highest: 
+        highest = i 
+print("Highest number:", highest)
 
 
 # TASK 23:
@@ -335,6 +379,16 @@ elif 1 <= choice <= 3:
 # Do NOT use min() or sorting.
 # Your logic must also work with all-negative numbers.
 
+print()
+print("Task 23:")
+print()
+
+numbers = [14, 67, 23, 89, 45, 12]
+lowest = numbers[0]
+for i in numbers: 
+    if i > lowest: 
+        lowest = i 
+print("Lowest number:", lowest)
 
 # TASK 24:
 # Create numbers = [5, 2, 5, 8, 5, 3, 2, 5].
@@ -342,6 +396,17 @@ elif 1 <= choice <= 3:
 # Use a loop to count how often target appears; print the count.
 # Do NOT use count(). It must work if target changes.
 
+print()
+print("Task 24:")
+print()
+
+numbers = [5, 2, 5, 8, 5, 3, 2, 5]
+target = 5 
+count = 0 
+for i in numbers: 
+    if i == target: 
+        count += 1 
+print(count)
 
 # ============================================================
 # SECTION 5 — IN / NOT IN (TASKS 25–30)
@@ -363,12 +428,25 @@ elif 1 <= choice <= 3:
 # Example: "grape" not in ["apple", "banana"] evaluates to True.
 # These expressions are useful in if statements and while loops.
 
+# "in" checks if the value exists in the list 
+# "not in" checks if the value does not exist in the list 
+
 # TASK 25:
 # Create foods = ["pizza", "burger", "tacos", "sushi", "pasta"].
 # Ask the user to enter a food.
 # Use 'in' to print "Available" or "Not available".
 # Do NOT use index() to search.
 
+print()
+print("Task 25:")
+print()
+
+foods = ["pizza", "burger", "tacos", "sushi", "pasta"]
+choice = input("Enter a food: ")
+if choice in foods: 
+    print("Available")
+else: 
+    print("Not available")
 
 # TASK 26:
 # Create supplies = ["pencil", "notebook", "eraser", "backpack"].
@@ -376,6 +454,16 @@ elif 1 <= choice <= 3:
 # Use 'not in' to print "Need to buy" if it is missing,
 # otherwise print "Already have it".
 
+print()
+print("Task 26:")
+print()
+
+supplies = ["pencil", "notebook", "eraser", "backpack"]
+item = input("Enter an item: ")
+if item not in supplies: 
+    print("Need to buy")
+else: 
+    print("Already have it")
 
 # TASK 27:
 # Create usernames = ["alex123", "gamer99", "pythonpro"].
@@ -384,6 +472,17 @@ elif 1 <= choice <= 3:
 # Otherwise append it and print the updated list.
 # Do not allow duplicates.
 
+print()
+print("Task 27:")
+print()
+
+usernames = ["alex123", "gamer99", "pythonpro"]
+username = input("Enter a new username: ")
+if username in usernames: 
+    print("Username taken")
+else: 
+    usernames.append(username)
+    print(usernames)
 
 # TASK 28:
 # Modify the idea from Task 27 using a NEW list named accounts.
@@ -392,6 +491,15 @@ elif 1 <= choice <= 3:
 # is NOT in accounts. Append the accepted name and print accounts.
 # REQUIREMENT: Use 'not in' in your solution.
 
+print()
+print("Task 28:")
+print()
+
+accounts = ["admin", "guest"]
+name = input("Input name: ")
+while name not in accounts: 
+    accounts.append(name)
+    print(accounts)
 
 # TASK 29:
 # Create secret_words = ["dragon", "robot", "python", "galaxy"].
@@ -399,6 +507,17 @@ elif 1 <= choice <= 3:
 # Count and print the number of guesses made.
 # A correct first guess should count as 1.
 
+print()
+print("Task 29:")
+print()
+
+secret_words = ["dragon", "robot", "python", "galaxy"]
+word = input("Input a word: ")
+guess = 1
+while word not in secret_words: 
+    word = input("Input a word: ")
+    guess += 1 
+print(guess)
 
 # TASK 30:
 # Create guests = [].
@@ -406,6 +525,12 @@ elif 1 <= choice <= 3:
 # If a name is already in guests, reject it and ask again.
 # Use a while loop, 'in' or 'not in', and append().
 # Print the finished list and its length.
+
+print()
+print("Task 30:")
+print()
+
+guests = []
 
 
 # ============================================================
