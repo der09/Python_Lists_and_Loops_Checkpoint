@@ -131,19 +131,37 @@ print()
 print("Task 9:")
 print()
 
+for i in range(1, 51): 
+    if i % 2 == 0: 
+        print(i)
+
 # TASK 10:
 # Create number = 7.
 # Print its multiplication table from 1 through 12 using a for loop.
 # Example line: 7 x 3 = 21
 # Your code must also work if number changes.
 
+print()
+print("Task 10:")
+print()
+
+number = 7 
+for i in range(1, 13): 
+    print(number, "x", i, "=", (number * i))
 
 # TASK 11:
 # Create students = ["Alex", "Jordan", "Taylor", "Morgan", "Casey"].
 # Use a for loop to print "Student: " followed by each name.
 # Do NOT write five separate print statements.
 
+print()
+print("Task 11:")
+print()
 
+students = ["Alex", "Jordan", "Taylor", "Morgan", "Casey"]
+for i in students: 
+    print("Student: " + i)
+    
 # TASK 12:
 # Using students, print a NUMBERED roster:
 # 1. Alex
@@ -152,6 +170,12 @@ print()
 # 5. Casey
 # Use range(len(students)) OR enumerate().
 
+print()
+print("Task 12:")
+print()
+
+for i, name in enumerate(students, start=1):
+    print(f"{i}. {name}")
 
 # ============================================================
 # SECTION 3 — WHILE LOOPS & VALIDATION (TASKS 13–18)
@@ -162,12 +186,31 @@ print()
 # Use a while loop to print from countdown down to 0.
 # Then print "Blast off!". Avoid an infinite loop.
 
+print()
+print("Task 13:")
+print()
+
+countdown = 10 
+while countdown >= 0: 
+    print("Blast off!")
+    countdown = countdown - 1 
 
 # TASK 14:
 # Create password = "Python123".
 # Keep asking the user for a password until it matches.
 # Print "Access granted" exactly once after a correct entry.
 
+print()
+print("Task 14:")
+print()
+
+password = "Python123"
+question = input("Enter password: ")
+while question != "Python123": 
+    question = input("Enter password: ")
+    if password == question:
+        print("Access granted")
+        break
 
 # TASK 15:
 # Ask the user for an integer between 1 and 10 INCLUSIVE.
@@ -175,12 +218,33 @@ print()
 # After a valid entry, print "Valid number".
 # Test 0, 1, 10, and 11.
 
+print()
+print("Task 15:")
+print()
+
+integer = int(input("Enter an integer between 1 and 10: "))
+while integer > 10 or integer < 1: 
+    integer= int(input("Enter an integer between 1 and 10: "))
+    if integer >= 1 and integer <= 10: 
+        print("Valid number")
+        break
 
 # TASK 16:
 # Create total = 0.
 # Repeatedly ask for an integer. Add each nonzero entry to total.
 # Stop when the user enters 0, then print total.
 # Example inputs: 5, 8, -2, 0 -> Total: 11.
+
+print()
+print("Task 16:")
+print()
+
+total = 0
+integer = int(input("Enter an integer: "))
+while integer != 0: 
+    total = total + integer
+    integer = int(input("Enter an integer:"))
+print("Total:",total)
 
 
 # TASK 17:
@@ -189,6 +253,25 @@ print()
 # Print "Correct" if guessed in time; otherwise "Out of attempts".
 # Make sure a correct guess does NOT print both messages.
 
+print()
+print("Task 17:")
+print()
+
+secret = "robot"
+attempts = 3
+
+guess = input("Guess the secret: ")
+while attempts > 0: 
+    if guess == secret: 
+        print("Correct")
+        break
+    else: 
+        guess != secret
+        attempts = attempts - 1 
+        guess = input("Guess the secret: ")
+
+if attempts == 0: 
+    print("Out of attempts")
 
 # TASK 18:
 # Make a while-loop menu:
@@ -198,6 +281,24 @@ print()
 # Repeat until the user enters 3. Handle invalid choices.
 # Print "Goodbye" only when option 2 is selected.
 
+print()
+print("Task 18:")
+print()
+
+
+
+choice = input("Choose 1, 2, or 3: ")
+if choice > 3 or choice < 1: 
+    print("Invalid choice")
+    choice = input("Choose 1, 2, or 3:")
+elif 1 <= choice <= 3: 
+    while choice != 3: 
+        print("1. Say Hello")
+        print("2. Say Goodbye")
+        print("3. Exit")
+        if choice == 2: 
+            print("Goodbye")
+            break
 
 # ============================================================
 # SECTION 4 — PROCESSING LISTS WITH LOOPS (TASKS 19–24)
