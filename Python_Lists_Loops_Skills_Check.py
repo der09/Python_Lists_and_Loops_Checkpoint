@@ -291,13 +291,17 @@ if choice > 3 or choice < 1:
     choice = int(input("Choose 1, 2, or 3:"))
 elif 1 <= choice <= 3: 
     while choice != 3: 
-        print("1. Say Hello")
-        print("2. Say Goodbye")
-        print("3. Exit")
-        choice = int(input("Choose 1, 2, or 3:"))
         if choice == 2: 
             print("Goodbye")
-            break
+            print("1. Say Hello")
+            print("2. Say Goodbye")
+            print("3. Exit")
+        elif choice == 1: 
+            print("Hello")
+            print("1. Say Hello")
+            print("2. Say Goodbye")
+            print("3. Exit")
+        choice = int(input("Choose 1, 2, or 3:"))
 
 # ============================================================
 # SECTION 4 — PROCESSING LISTS WITH LOOPS (TASKS 19–24)
@@ -497,9 +501,10 @@ print()
 
 accounts = ["admin", "guest"]
 name = input("Input name: ")
-while name not in accounts: 
-    accounts.append(name)
-    print(accounts)
+while name in accounts: 
+    name = input("Input name: ")
+accounts.append(name)
+print(accounts)
 
 # TASK 29:
 # Create secret_words = ["dragon", "robot", "python", "galaxy"].
@@ -531,6 +536,16 @@ print("Task 30:")
 print()
 
 guests = []
+name = 5
+while name != 0: 
+    guest_name = input("Enter an unique guest name: ")
+    if guest_name in name: 
+        guest_name = input("Enter an unique guest name please: ")
+    elif guest_name not in name: 
+        name = name - 1 
+        name.append(guest_name)
+    print(guests)
+    print(len(guests))
 
 
 # ============================================================
@@ -543,6 +558,18 @@ guests = []
 # Do NOT use count().
 # Test: count_positive([-2, 0, 4, 9, -1]) -> 2
 
+print()
+print("Task 31:")
+print()
+
+count = 0 
+def count_positive(numbers): 
+    for i in numbers: 
+        if i > 0: 
+            count += 1
+        else: 
+            count = count 
+    return count 
 
 # TASK 32:
 # Create a function named find_item(items, target).
@@ -551,6 +578,15 @@ guests = []
 # Test: find_item(["cat", "dog", "cat"], "cat") -> 0
 # Test: find_item(["cat", "dog"], "fish") -> -1
 
+print()
+print("Task 32:")
+print()
+
+def find_item(items, target): 
+    if target != item[0]: 
+        return -1 
+    else: 
+        return item[0]
 
 # TASK 33:
 # Create a function named unique_items(items).
@@ -558,6 +594,12 @@ guests = []
 # appearance order. REQUIREMENT: Use 'not in'.
 # Test: unique_items([1, 2, 2, 3, 1, 4]) -> [1, 2, 3, 4]
 
+print()
+print("Task 33:")
+print()
+
+def unique_items(items): 
+    if
 
 # TASK 34:
 # Create a function named common_items(list1, list2).
@@ -566,6 +608,16 @@ guests = []
 # REQUIREMENT: Use both 'in' and 'not in'.
 # Test: common_items([1, 2, 3, 3], [3, 4, 1]) -> [1, 3]
 
+print()
+print("Task 34:")
+print()
+
+add = []
+def common_items(list1, list2): 
+    for i in list1: 
+        if list1[i] in list2: 
+            add.append(i) 
+    return add 
 
 # TASK 35:
 # Create a function named reverse_list(items).
@@ -573,6 +625,16 @@ guests = []
 # Do NOT use reverse(), reversed(), or [::-1].
 # Test: reverse_list([10, 20, 30]) -> [30, 20, 10]
 
+print()
+print("Task 35:")
+print()
+
+new = []
+def reverse_list(items):
+    for i in items: 
+        items[len(items)] = items[i] 
+
+    return new 
 
 # ============================================================
 # SECTION 7 — DEBUGGING (TASKS 36–37)
@@ -588,6 +650,14 @@ guests = []
 #
 # Do NOT replace the while loop with a for loop.
 
+print()
+print("Task 36:")
+print()
+
+number = 1
+while number <= 5:
+    print(number)
+    number += 1
 
 # TASK 37:
 # Fix this code so it removes ALL 4s without skipping any.
@@ -601,6 +671,7 @@ guests = []
 #
 # Expected: [7, 9]
 # HINT: A while loop and 'in' can help.
+
 
 
 # ============================================================
