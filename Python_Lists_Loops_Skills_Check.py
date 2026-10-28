@@ -849,6 +849,7 @@ for i in students:
     for here, attend in enumerate(attendance, start = 1):
         if here == "A": 
             print(here)
+            #hlep
 
 for number, item in enumerate(shopping_list, start = 1): 
                 print(number, ".", item)
