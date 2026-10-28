@@ -600,8 +600,13 @@ print()
 print("Task 33:")
 print()
 
+
 def unique_items(items): 
-    if
+    new = []
+    for i in items: 
+        if i not in new: 
+            new.append(i)
+    return new
 
 # TASK 34:
 # Create a function named common_items(list1, list2).
@@ -614,13 +619,13 @@ print()
 print("Task 34:")
 print()
 
-add = []
 def common_items(list1, list2): 
+    add = []
     for i in list1: 
         if i in list2 and i not in add: 
             add.append(i)
     return add
-print(common_items([list1], [list2]))
+
 # TASK 35:
 # Create a function named reverse_list(items).
 # RETURN a NEW list in reverse order, without changing items.
@@ -631,8 +636,9 @@ print()
 print("Task 35:")
 print()
 
-new = []
+
 def reverse_list(items):
+    new = []
     for i in items: 
         items[len(items)] = items[i] 
 
@@ -711,6 +717,52 @@ print()
 
 shopping_list = []
 
+while True: 
+    print("1. Add item")
+    print("2. Remove item")
+    print("3. View numbered items")
+    print("4. Search for item")
+    print("5. Exit")
+
+    choice = input("Choose 1, 2, 3, 4, 5: ")
+
+    if choice == "1": 
+        item = input("Enter item to add: ")
+        if item in shopping_list: 
+            print("Item already exists")
+        else: 
+            shopping_list.append(item)
+            print(item, "added")
+
+    elif choice == "2": 
+        item = input("Enter item to add: ")
+        if item not in shopping_list: 
+            print("Item not avaliable to be removed")
+        else: 
+            shopping_list.remove(item)
+            print(item, "removed")
+
+    elif choice == "3": 
+        if shopping_list == []:
+            print("Shopping list is empty")
+        else: 
+            print("Your shopping list: ")
+            for number, item in enumerate(shopping_list, start = 1): 
+                print(number, ".", item)
+
+    elif choice == "4": 
+        item = input("Enter itme to search for: ")
+        if item in shopping_list: 
+            print(item, "is in your shopping list")
+        else: 
+            print(item, "isn't in your shopping list")
+
+    elif choice == "5": 
+        print("Goodbye")
+        break
+
+    else: 
+        print("Invalid, choose a valid number. ")
 
 
 # TASK 39 — GRADE ANALYZER:
@@ -724,6 +776,41 @@ shopping_list = []
 # Expected: [95, 58, 75.2, 3, 2]
 # Test with a single grade and all-negative values too.
 
+
+def analyze_grades(grades):
+    report = []
+    highest_grade = 0 
+    lowest_grade = 0 
+    total = 0 
+    average = 0 
+    passing = 0 
+    failing = 0  
+
+    for i in grades: 
+        if i > grades[0]:
+            highest_grade = i 
+    report.append(highest_grade)
+    for i in grades: 
+        if i < grades[0]:
+            lowest_grade = i
+    report.append(lowest_grade)
+
+    for i in grades: 
+        total += i 
+        average = total/len(grades)
+    report.append(average)
+
+    for i in grades: 
+        if i >= 70: 
+            passing += 1
+        else:
+            failing += 1
+    report.append(passing)
+    report.append(failing)
+
+    return(report)
+
+analyze_grades([95, 82, 67, 74, 58])
 
 # TASK 40 — STUDENT ATTENDANCE SYSTEM:
 # Start with:
@@ -742,6 +829,30 @@ shopping_list = []
 #   the percentage; if students is empty, RETURN 0.
 # - Test with all present, all absent, and a mixture.
 
+print() 
+print("Task 40: ")
+print() 
+
+students = ["Alex", "Jordan", "Taylor", "Morgan", "Casey"]
+present = []
+absent = []
+
+attendance = []
+for i in students: 
+    attend = input("Is student[i] absent(A) or present(P)): ")
+
+    while attend != "P" or attend != "A": 
+        print("Invalid")
+        attend = input("Is student[i] absent(A) or present(P)): ")
+
+    attendance.append(attend)
+    for here, attend in enumerate(attendance, start = 1):
+        if here == "A": 
+            print(here)
+
+for number, item in enumerate(shopping_list, start = 1): 
+                print(number, ".", item)
+    
 
 # ============================================================
 # END OF CHECKPOINT — REVIEW YOUR WORK BEFORE PUSHING
