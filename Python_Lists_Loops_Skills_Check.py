@@ -95,7 +95,11 @@ print("Task 6:")
 print()
 
 colors = ["red", "blue", "green", "yellow", "purple"]
+green_index = colors.index("green")
+print(green_index)
 
+colors[3] = "orange"
+print(colors)
 
 # ============================================================
 # SECTION 2 — FOR LOOPS & RANGE (TASKS 7–12)
@@ -120,8 +124,8 @@ print()
 print("Task 8:")
 print()
 
-for i in range(33, -1):
-    print(i - 3)
+for i in range(30, -1. -3):
+    print(i)
 
 # TASK 9:
 # Use a for loop to print all EVEN numbers from 1 to 50.
@@ -192,8 +196,9 @@ print()
 
 countdown = 10 
 while countdown >= 0: 
-    print("Blast off!")
+    print(countdown)
     countdown = countdown - 1 
+print("Blast off!")
 
 # TASK 14:
 # Create password = "Python123".
@@ -208,9 +213,8 @@ password = "Python123"
 question = input("Enter password: ")
 while question != "Python123": 
     question = input("Enter password: ")
-    if password == question:
-        print("Access granted")
-        break
+
+print("Access granted")
 
 # TASK 15:
 # Ask the user for an integer between 1 and 10 INCLUSIVE.
@@ -225,9 +229,7 @@ print()
 integer = int(input("Enter an integer between 1 and 10: "))
 while integer > 10 or integer < 1: 
     integer= int(input("Enter an integer between 1 and 10: "))
-    if integer >= 1 and integer <= 10: 
-        print("Valid number")
-        break
+print("Valid number")
 
 # TASK 16:
 # Create total = 0.
@@ -260,15 +262,14 @@ print()
 secret = "robot"
 attempts = 3
 
-guess = input("Guess the secret: ")
 while attempts > 0: 
+    guess = input("Guess the secret: ")
+
     if guess == secret: 
         print("Correct")
         break
     else: 
-        guess != secret
         attempts = attempts - 1 
-        guess = input("Guess the secret: ")
 
 if attempts == 0: 
     print("Out of attempts")
@@ -284,6 +285,7 @@ if attempts == 0:
 print()
 print("Task 18:")
 print()
+
 
 choice = int(input("Choose 1, 2, or 3: "))
 if choice > 3 or choice < 1: 
@@ -615,10 +617,10 @@ print()
 add = []
 def common_items(list1, list2): 
     for i in list1: 
-        if list1[i] in list2: 
-            add.append(i) 
-    return add 
-
+        if i in list2 and i not in add: 
+            add.append(i)
+    return add
+print(common_items([list1], [list2]))
 # TASK 35:
 # Create a function named reverse_list(items).
 # RETURN a NEW list in reverse order, without changing items.
@@ -659,6 +661,8 @@ while number <= 5:
     print(number)
     number += 1
 
+# what was wrong is that, the system will be in a loop forever since the number never changed, and so it's always less than 5 
+
 # TASK 37:
 # Fix this code so it removes ALL 4s without skipping any.
 # Explain in a comment why the original approach can fail.
@@ -672,7 +676,16 @@ while number <= 5:
 # Expected: [7, 9]
 # HINT: A while loop and 'in' can help.
 
+print() 
+print("Task 37: ")
+print()
 
+values = [4, 4, 7, 4, 9]
+while 4 in values: 
+    values.remove(4)
+print(values)
+
+# the original approach can fail because when the first value that has four gets removed, all the numbers index get moved down by one number, and so the system can miss it because it already checked that value. 
 
 # ============================================================
 # FINAL BOSS CHALLENGES (TASKS 38–40)
@@ -691,6 +704,13 @@ while number <= 5:
 # - Use 'in' to prevent duplicates and 'not in' to reject missing items.
 # - Handle an empty list and invalid menu selections.
 # - Keep running until the user chooses Exit.
+
+print() 
+print("Task 38: ")
+print()
+
+shopping_list = []
+
 
 
 # TASK 39 — GRADE ANALYZER:
