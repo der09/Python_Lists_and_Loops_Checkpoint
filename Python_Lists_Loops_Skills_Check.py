@@ -124,7 +124,7 @@ print()
 print("Task 8:")
 print()
 
-for i in range(30, -1. -3):
+for i in range(30, -1, -3):
     print(i)
 
 # TASK 9:
@@ -298,11 +298,13 @@ elif 1 <= choice <= 3:
             print("1. Say Hello")
             print("2. Say Goodbye")
             print("3. Exit")
+            print()
         elif choice == 1: 
             print("Hello")
             print("1. Say Hello")
             print("2. Say Goodbye")
             print("3. Exit")
+            print()
         choice = int(input("Choose 1, 2, or 3:"))
 
 # ============================================================
@@ -334,12 +336,11 @@ print("Task 20:")
 print()
 
 total = 0 
-average = 0 
 grades = [90, 85, 78, 92, 88]
-for i in len(range(grades)): 
+for i in grades: 
     total = total + i 
-    average = total/(len(grades))
-    print(average)
+average = total/len(grades)
+print(average)
 
 # TASK 21:
 # Create numbers = [3, 8, 12, 7, 15, 20, 24, 9].
@@ -350,16 +351,18 @@ print()
 print("Task 21:")
 print()
 
-count = 0 
+even = 0 
 odd = 0
 numbers = [3, 8, 12, 7, 15, 20, 24, 9]
 for i in numbers: 
     if i % 2 == 0: 
-        count = count + 1 
+        even += 1 
     else: 
-        odd = odd + 1 
-    print("Even:", count)
-    print("Odd:", odd)
+        odd += 1
+
+
+print("Even:", even)
+print("Odd:", odd)
 
 # TASK 22:
 # Create numbers = [-14, -67, -23, -89, -45].
@@ -839,21 +842,48 @@ absent = []
 
 attendance = []
 for i in students: 
-    attend = input("Is student[i] absent(A) or present(P)): ")
+    attend = input("Is", i, "absent(A) or present(P)): ")
 
-    while attend != "P" or attend != "A": 
+    while attend != "P" and attend != "A": 
         print("Invalid")
-        attend = input("Is student[i] absent(A) or present(P)): ")
+        attend = input("Is", i, "absent(A) or present(P)): ")
 
-    attendance.append(attend)
-    for here, attend in enumerate(attendance, start = 1):
-        if here == "A": 
-            print(here)
-            #hlep
+    if attend == "P": 
+        if i not in present: 
+            present.append(i)
+        else: 
+            if i not in absent: 
+                absent.append(i)
 
-for number, item in enumerate(shopping_list, start = 1): 
-                print(number, ".", item)
-    
+def attendance_percentage(present, students): 
+    if len(students) == 0: 
+        return 0 
+
+    percentage = len(present)/len(students) * 100 
+    return percentage 
+            
+
+print() 
+print("Present Students")
+
+if len(present) == 0: 
+    print("Nobody is present")
+else: 
+    for number, student in enumerate(present, start = 1): 
+        print(number, ".", student)
+
+print() 
+print("Absent Students")
+
+if len(absent) == 0: 
+    print("Perfect attendance!")
+else: 
+    for number, student in enumerate(absent, start = 1): 
+        print(number, ".", student)       
+
+print("Number present:", len(present))
+print("Number absent:", len(absent))
+print("Attendance percentage:", attendance_percentage(present, students), "%")
 
 # ============================================================
 # END OF CHECKPOINT — REVIEW YOUR WORK BEFORE PUSHING
